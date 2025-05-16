@@ -8,7 +8,7 @@ console.log("할인률 : "+discount +"%");
 
 function disprice(price, discount) {
     
-    return Math.round((price - (price * discount / 100))/10) * 10;
+    return Math.round((price - (price * discount / 100))/100) * 100;
 }
 
 console.log("할인가 : " + disprice(price, discount));

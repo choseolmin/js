@@ -1,13 +1,30 @@
-let talk = "윤대원이 말했다. 한별님 불좀 꺼줄래?";
-let ox = 0;
+const readline = require('readline');
 
-ox = talk.includes("한별") && talk.includes("윤대원");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,});
+  
+rl.question('변수 a를 입력해 주세요. 작은수 ', (a) => {
+    
+    rl.question('변수 b를 입력해 주세요. 큰수 ', (b) => {
+    
+    let result = 0;
+    a = parseInt(a);
+    b = parseInt(b);
 
+    if (b % a === 0) {
+        console.log(`b는 a의 배수 입니다.`);
+    }
+    else {
+        console.log(`b는 a의 배수가 아닙니다.`);
+    }
 
-console.log("제시단어 : 한별 , 윤대원" );
-console.log("두 단어가 문장에 있을까요?: " + ox);
+    for (let i = a; i < b+1 ; i++) {
+        result += i;
+    }
 
-console.log("제시단어 : 한별 , 111" );
-ox = talk.includes("한별") && talk.includes("111");
+    console.log(result);
+    rl.close();
 
-console.log("두 단어가 문장에 있을까요?: " + ox);
+});
+});
